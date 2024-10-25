@@ -1,0 +1,22 @@
+apiVersion: networking.istio.io/v1
+kind: Gateway
+metadata:
+  name: argocd-gateway
+  namespace: argocd  # Make sure this matches the namespace where Argo CD is deployed
+spec:
+  selector:
+    istio: ingressgateway  # Use the default Istio ingress gateway
+  servers:
+    - port:
+        number: 443
+        name: https
+        protocol: HTTPS
+      hosts:
+        - argocd.devopswithme.in 
+
+          #- port:
+          #number: 443
+          #name: https
+          #protocol: HTTPS
+          #hosts:
+          #- argocd.devopswithme.com

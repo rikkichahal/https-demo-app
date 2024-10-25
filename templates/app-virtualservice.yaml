@@ -1,0 +1,19 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: demo-app
+  namespace: app
+spec:
+  hosts:
+  - "demo.devopswithme.com"  # The same hostname as in the Gateway
+  gateways:
+  - demo-app-gateway        # Reference to the Gateway you just created
+  http:
+  - match:
+    - uri:
+        prefix: /             # Route all paths
+    route:
+    - destination:
+        host:  demo-app.app.svc.cluster.local # Your app's service name
+        port:
+          number: 8085         # Port where your app listens

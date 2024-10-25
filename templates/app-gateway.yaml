@@ -1,0 +1,16 @@
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  name: demo-app-gateway
+spec:
+  selector:
+    istio: ingressgateway  # use Istio's built-in ingress gateway
+  servers:
+  - port:
+      number: 80          # Port that the Gateway will listen on
+      name: http
+      protocol: HTTP
+    hosts:
+    - "demo.devopswithme.com"
+     # The hostname your app will respond to
+
