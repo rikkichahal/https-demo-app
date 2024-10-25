@@ -7,10 +7,10 @@ spec:
     istio: ingressgateway  # use Istio's built-in ingress gateway
   servers:
   - port:
-      number: 80          # Port that the Gateway will listen on
-      name: http
-      protocol: HTTP
+      number: 443          # Port that the Gateway will listen on
+      name: https
+      protocol: HTTPS
     hosts:
-    - "demo.devopswithme.com"
+    - "demo.devopswithme.in"
      # The hostname your app will respond to
 

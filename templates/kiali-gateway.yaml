@@ -10,6 +10,6 @@ spec:
   - port:
       number: 443
       name: http-kiali
-      protocol: HTTPs
+      protocol: HTTPS
     hosts:
     - "kiali.devopswithme.in"
